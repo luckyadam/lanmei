@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+        <meta name="format-detection" content="telephone=no" >
+        <title>拜年卡</title>
+        <link rel="stylesheet" href="css/new_year_card.min.css">
+    </head>
+    <body>
+        <div class="content" id="content">
+            <div class="open_animation view_page animated" id="open_animation">
+                <div class="ani_loading_container" id="ani_loading">
+                    <div class="ani_loading"></div>正在拼命加载<span class="dotting"></span>
+                </div>
+                <div class="animation_panet" id="animation_panet">
+                </div>
+            </div>
+            <div class="main view_page animated" id="main">
+                <div class="title animated" id="title">这个春节，蓝莓陪你过</div>
+                <div class="main_center">
+                    <div class="main_content animated" id="main_content">
+                        <div class="main_content_txt animated" id="main_content_txt">
+                            <p class="auto_text">XXX</p>
+                            <p class="auto_text">感谢在外漂泊的日子里有你春节到了，祝福你：</p>
+                            <p class="bless_message">羊儿到，鸿运到！烦恼的事儿往边靠。过年好！</p>
+                        </div>
+                    </div>
+                    <!-- 此处通过某个变量来判断是应用内还是应用外，应用内展示send_inner，应用外展示send_bless -->
+                    <!-- <div class="send_bless display_flex flex_h flex_center animated" id="send_bless"><p class="flex_item_1">春节到啦！通过蓝莓给厂里小伙伴送祝福吧！</p><button class="send_bless_btn">制作拜年卡</button>
+                    </div> -->
+                    <div class="send_inner animated" id="send_inner">
+                        <!-- 此处为跳转链接的方式，to和content是两个模板变量 -->
+                        <a href="share://lanmeiquan.com/bainian?to=xxx&content=羊儿到，鸿运到！烦恼的事儿往边靠。过年好！" class="send_inner_btn" id="send_inner_btn">发送给厂里的朋友</a>
+                    </div>
+                </div>
+                <!-- 此处通过某个变量来判断是应用内还是应用外，应用内不展示bottom_download -->
+                <div class="bottom_download display_flex flex_h flex_center animated" id="bottom_download">
+                    <img src="img/logo_new.png" class="download_logo" >
+                    <div class="download_txt flex_item_1">
+                        <p class="download_txt_title">蓝莓打工社区</p>
+                        <p class="download_txt_sub">让漂泊的心有个家</p>
+                    </div>
+                    <button class="send_bless_btn">立即下载</button>
+                </div>
+                <img src="img/sheeps.png" id="sheeps" class="sheeps animated" >
+            </div>
+        </div>
+        <script src="js/lib/lib.min.js"></script>
+        <script src="js/new_year_card.min.js"></script>
+        <script>
+            $(function(argument) {
+                newYearCard.init({
+                    $root: $('#content')
+                });
+            });
+        </script>
+    </body>
+</html>
